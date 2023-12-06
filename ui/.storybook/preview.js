@@ -1,4 +1,5 @@
 /** @type { import('@storybook/react').Preview } */
+import "../styles/global.css";
 const preview = {
   parameters: {
     actions: { argTypesRegex: "^on[A-Z].*" },
@@ -8,6 +9,14 @@ const preview = {
         date: /Date$/i,
       },
     },
+    options: {
+      storySort: {
+        method: "alphabetical",
+        order: ["templates", "organisms", "molecules", "atoms", "samples"],
+      },
+    },
+    docs: { previewSource: "open" },
+    layout: "fullscreen",
   },
 };
 
