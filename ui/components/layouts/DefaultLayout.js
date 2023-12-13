@@ -1,20 +1,25 @@
-import React from "react";
+import { AlertMessage, Footer, Menu } from "@/molecules";
+import Head from "next/head";
 
-const DefaultLayout = ({ children }) => {
+const DefaultLayout = ({
+  children,
+  heading,
+  isFooder = true,
+  isHeader = true,
+  pageMetaTitle,
+  pageTitle,
+}) => {
   return (
     <div>
-      {/* Common Header */}
-      <header>
-        <h1>My Next.js App</h1>
-      </header>
+      <Head>
+        <title>{pageTitle}</title>
+        <meta property="og:title" content={pageMetaTitle} key="title" />
+      </Head>
+      <AlertMessage />
+      <Menu />
+      <main className="mx-10 my-10">{children}</main>
 
-      {/* Page Content */}
-      <main>{children}</main>
-
-      {/* Common Footer */}
-      <footer>
-        <p>&copy; {new Date().getFullYear()} My Next.js App</p>
-      </footer>
+      {isFooder && <Footer />}
     </div>
   );
 };

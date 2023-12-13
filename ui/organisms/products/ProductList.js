@@ -1,13 +1,14 @@
+import { Fragment } from "react";
 import { ProductCard } from "@/molecules";
 
-const dummyProductList = [{}, {}, {}, {}, {}, {}, {}, {}, {}];
+const dummyProductList = [{}, {}, {}, {}, {}, {}, {}];
 
 const ProductList = () => (
-  <div className="flex flex-wrap gap-4">
+  <Fragment>
     {dummyProductList.map((index) => (
       <ProductCard key={index} />
     ))}
-  </div>
+  </Fragment>
 );
 
 export default ProductList;

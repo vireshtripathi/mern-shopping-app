@@ -1,11 +1,11 @@
+import DefaultLayout from "@/components/layouts/DefaultLayout";
 import HomePageTemplate from "@/templates/HomePageTemplate";
-import React from "react";
 
 const HomePage = () => {
   return (
-    <div>
+    <DefaultLayout {...{ pageTitle: "Home" }}>
       <HomePageTemplate />
-    </div>
+    </DefaultLayout>
   );
 };
 
