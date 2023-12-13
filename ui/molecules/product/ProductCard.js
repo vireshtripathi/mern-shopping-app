@@ -1,15 +1,18 @@
 import Image from "next/image";
 
+const dummyProductTitle = "Lays Bar-B-Que Potato Chips";
+const dummyProductPrice = "$5.00 - $15.00";
+
 const ProductCard = () => (
   <article
-    className="flex flex-col group overflow-hidden rounded-md cursor-pointer transition-all duration-300 shadow-card hover:shadow-cardHover relative h-full"
-    title="Lay's Bar-B-Que Potato Chips"
+    className="flex flex-col group overflow-hidden rounded-md cursor-pointer transition-all duration-300 shadow-card hover:shadow-cardHover relative h-full border"
+    title=""
   >
     <div className="relative shrink-0">
-      <div className="overflow-hidden mx-auto w-full sm:w-[180px] h-[180px] md:w-[200px] md:h-[200px] transition duration-200 ease-in-out transform group-hover:scale-105 relative">
+      <div className="overflow-hidden mx-auto w-full sm:w-[180px] h-[180px] md:w-[200px] md:h-[200px] transition duration-200 ease-in-out transform group-hover:scale-105 relative p-4">
         <Image
-          width={200}
-          height={200}
+          width={170}
+          height={170}
           src="/icons/placeholder.svg"
           alt="categories"
           className="rounded-full"
@@ -35,13 +38,12 @@ const ProductCard = () => (
     <div className="flex flex-col px-3 md:px-4 lg:px-[18px] pb-5 lg:pb-6 lg:pt-1.5 h-full">
       <div className="mb-1 lg:mb-1.5 -mx-1">
         <span className="inline-block mx-1 text-sm font-semibold sm:text-15px lg:text-base text-brand-dark">
-          $5.00 - $15.00
+          {dummyProductPrice}
         </span>
       </div>
       <h2 className="text-brand-dark text-13px sm:text-sm lg:text-15px leading-5 sm:leading-6 mb-1.5">
-        Lays Bar-B-Que Potato Chips
+        {dummyProductTitle}
       </h2>
-      <div className="mt-auto text-13px sm:text-sm">1 each</div>
     </div>
   </article>
 );
