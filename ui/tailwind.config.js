@@ -4,10 +4,10 @@ const colors = {
   brand: "#63B48F",
   platinum: "#E4E4E4",
   nero: "#222222",
-  dimGray: "#717171",
+  "dim-gray": "#717171",
   neutral: "#F3F3F6",
   silver: "#BABABA",
-  lightRed: "#FFF1EC",
+  "light-red": "#FFF1EC",
 };
 
 module.exports = {
@@ -37,6 +37,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      container: {
+        center: true,
+      },
       borderColor: () => ({
         ...colors,
       }),
