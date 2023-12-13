@@ -39,3 +39,17 @@ body {
   right: 10px;
   cursor: pointer;
 }
+.carousel-root {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.thumbs {
+  display: flex;
+  flex-direction: column;
+}
+div.carousel {
+  width: auto;
+}
+div.carousel .thumbs-wrapper {
+  margin-top: 0;
+}

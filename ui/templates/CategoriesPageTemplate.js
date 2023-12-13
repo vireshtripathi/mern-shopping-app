@@ -1,3 +1,4 @@
+import { CategoryRow } from "@/molecules";
 import { ProductList } from "@/organisms";
 
 const CategoriesPageTemplate = () => (
@@ -9,7 +10,9 @@ const CategoriesPageTemplate = () => (
             <h3 class="text-brand-dark text-15px sm:text-base font-semibold mb-5 -mt-1">
               Categories
             </h3>
-            <div className="max-h-full overflow-hidden border rounded border-border-base"></div>
+            <div className="max-h-full overflow-hidden border rounded border-border-base">
+              <CategoryRow />
+            </div>
           </div>
         </div>
       </div>
@@ -21,7 +24,7 @@ const CategoriesPageTemplate = () => (
               2,683 Items Found
             </div>
             <div className="relative  rtl:mr-2 lg: lg:rtl:mr-0 min-w-[160px]">
-              sort vy
+              sort
             </div>
           </div>
         </div>
