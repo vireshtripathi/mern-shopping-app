@@ -1,11 +1,11 @@
 const menu = [
-  { label: "Home" },
-  { label: "About" },
-  { label: "Today's Deal" },
-  { label: "Best Seller" },
-  { label: "Mobile" },
-  { label: "Fashion" },
-  { label: "Customer Services" },
+  { label: "Home", link: "/" },
+  { label: "About", link: "/about" },
+  { label: "Today's Deal", link: "/todays-deal" },
+  { label: "Best Seller", link: "/best-seller" },
+  { label: "Mobile", link: "/mobile" },
+  { label: "Fashion", link: "/fashion" },
+  { label: "Customer Services", link: "/customer-services" },
 ];
 
 export default menu;

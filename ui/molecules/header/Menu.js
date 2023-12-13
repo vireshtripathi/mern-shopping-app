@@ -1,5 +1,8 @@
-import { Button, Text } from "@/atoms";
 import Image from "next/image";
+
+import { Button, Text } from "@/atoms";
+import menu from "@/config/menu";
+import Link from "next/link";
 
 const Menu = () => (
   <div className="flex items-center justify-between w-full h-full mx-auto max-w-[1920px] px-4 md:px-6 lg:px-8 2xl:px-10">
@@ -16,14 +19,22 @@ const Menu = () => (
       </a>
     </div>
     <nav className="headerMenu flex w-full relative">
-      <div className="relative py-3 mx-3 cursor-pointer menuItem group xl:mx-4">
-        <a
-          className="relative inline-flex items-center py-2 text-sm font-normal lg:text-15px text-brand-dark group-hover:text-brand before:absolute before:w-0 before:ltr:right-0 rtl:left-0 before:bg-brand before:h-[3px] before:transition-all before:duration-300 before:-bottom-[14px] group-hover:before:w-full ltr:group-hover:before:left-0 rtl:group-hover:before:right-0 lrt:group-hover:before:right-auto rtl:group-hover:before:left-auto"
-          href="/antique"
+      {menu.map(({ label, link }, index) => (
+        <div
+          key={index}
+          className="relative py-3 mx-3 cursor-pointer menuItem group xl:mx-4"
         >
-          Demos
-        </a>
-      </div>
+          <Link href={link}>
+            <Text
+              {...{
+                content: label,
+                className:
+                  "relative inline-flex items-center py-2 text-sm font-normal lg:text-15px text-brand-dark group-hover:text-brand before:absolute before:w-0 before:ltr:right-0 rtl:left-0 before:bg-brand before:h-[3px] before:transition-all before:duration-300 before:-bottom-[14px] group-hover:before:w-full ltr:group-hover:before:left-0 rtl:group-hover:before:right-0 lrt:group-hover:before:right-auto rtl:group-hover:before:left-auto",
+              }}
+            />
+          </Link>
+        </div>
+      ))}
     </nav>
     <div className="flex shrink-0 -mx-2.5 xl:-mx-3.5">
       <button
