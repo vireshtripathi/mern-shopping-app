@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.banner {
+  background-image: url("/banner/banner.jpg");
+  background-position: center center;
+}
