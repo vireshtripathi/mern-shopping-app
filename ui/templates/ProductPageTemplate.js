@@ -1,6 +1,7 @@
 // import ReactDOM from 'react-dom';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
+import { ProductList } from "@/organisms";
 
 const ProductPageTemplate = () => (
   <div className="mx-auto max-w-[1920px] px-4 md:px-6 lg:px-8 2xl:px-10">
@@ -292,6 +293,153 @@ const ProductPageTemplate = () => (
             with denim and white kicks for a stylish sporty vibe. Will fit a UK
             8-10, model shown is a UK 8 and 5’5. !!
           </p>
+        </div>
+      </div>
+
+      <div class="w-full xl:px-2 py-11 lg:py-14 xl:py-16 sm:px-0">
+        <div
+          class="block border-b border-border-base"
+          role="tablist"
+          aria-orientation="horizontal"
+        >
+          <button
+            class="relative inline-block transition-all text-15px lg:text-17px leading-5 text-brand-dark focus:outline-none pb-3 lg:pb-5 hover:text-brand ltr:mr-8 rtl:ml-8 font-semibold after:absolute after:w-full after:h-0.5 after:bottom-0 after:translate-y-[1px] after:ltr:left-0 after:rtl:right-0 after:bg-brand"
+            id="headlessui-tabs-tab-:r5:"
+            role="tab"
+            type="button"
+            aria-selected="true"
+            tabindex="0"
+            data-headlessui-state="selected"
+            aria-controls="headlessui-tabs-panel-:r7:"
+          >
+            Product Details
+          </button>
+          <button
+            class="relative inline-block transition-all text-15px lg:text-17px leading-5 text-brand-dark focus:outline-none pb-3 lg:pb-5 hover:text-brand ltr:mr-8 rtl:ml-8"
+            id="headlessui-tabs-tab-:r6:"
+            role="tab"
+            type="button"
+            aria-selected="false"
+            tabindex="-1"
+            data-headlessui-state=""
+            aria-controls="headlessui-tabs-panel-:r8:"
+          >
+            Review Rating
+          </button>
+        </div>
+        <div class="mt-6 lg:mt-9">
+          <div
+            class="lg:flex"
+            id="headlessui-tabs-panel-:r7:"
+            role="tabpanel"
+            aria-labelledby="headlessui-tabs-tab-:r5:"
+            tabindex="0"
+            data-headlessui-state="selected"
+          >
+            <div class="text-sm sm:text-15px text-brand-muted leading-[2em] space-y-4 lg:space-y-5 xl:space-y-7">
+              <p>
+                Go sporty this summer with this vintage navy and white striped
+                v-neck t-shirt from the Abercrombie &amp; Fitch. Perfect for
+                pairing with denim and white kicks for a stylish sporty vibe.
+                Will fit a UK 8-10, model shown is a UK 8 and 5’5. !!
+              </p>
+              <p>
+                Typography is the work of typesetters, compositors,
+                typographers, graphic designers, art directors, manga artists,
+                comic book artists, graffiti artists, and now—anyone who
+                arranges words, letters, numbers, and symbols for publication,
+                display, or distribution—from clerical workers and newsletter
+                writers to anyone self-publishing materials.
+              </p>
+              <p>
+                Hit your next boxing workout with a combination it’s never seen
+                before in the Combat Drop Arm Tank, including a
+                freedom-instilling regular fit and dropped armhole to allow you
+                to throw jabs and hooks at the punching bag with ease. A
+                lightweight material keeps you fighting fit, and fresh.
+              </p>
+              <p>
+                Go sporty this summer with this vintage navy and white striped
+                v-neck t-shirt from the Abercrombie &amp; Fitch. Perfect for
+                pairing with denim and white kicks for a stylish sporty vibe.
+                Will fit a UK 8-10, model shown is a UK 8 and 5’5. !!
+              </p>
+            </div>
+            <div class="shrink-0 lg:w-[400px] xl:w-[480px] 2xl:w-[550px] 3xl:w-[680px] lg:ltr:pl-10 lg:rtl:pr-10 xl:ltr:pl-14 xl:rtl:pr-14 2xl:ltr:pl-20 2xl:rtl:pr-20 pt-5 lg:pt-0">
+              <h3 class="text-brand-dark text-base lg:text-[17px] lg:leading-7 font-medium xl:text-lg mb-4 pt-0.5">
+                Nutrition Facts
+              </h3>
+              <div class="border rounded border-border-four">
+                <table class="w-full text-brand-dark text-15px">
+                  <thead>
+                    <tr class="border-b border-border-four">
+                      <th class="px-4 pt-3 pb-4 text-sm font-medium lg:px-5 xl:px-6 lg:pb-6 ltr:text-left rtl:text-right lg:text-15px xl:text-base">
+                        Amount per serving
+                        <span class="block font-semibold text-lg lg:text-xl xl:text-2xl pt-0.5">
+                          Calories
+                        </span>
+                      </th>
+                      <th class="border-s border-border-four px-4 lg:px-5 xl:px-6 pt-3 pb-5 ltr:text-right rtl:text-left w-24 lg:w-28 xl:w-36 font-semibold text-2xl lg:text-3xl xl:text-[36px]">
+                        70
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="font-normal border-b border-border-four last:border-b-0">
+                      <td class="px-4 py-3 lg:px-5 xl:px-6">Total Fat 5g</td>
+                      <td class="w-24 px-4 py-3 border-s border-border-four lg:px-5 xl:px-6 ltr:text-right rtl:text-left lg:w-28 xl:w-36">
+                        6%
+                      </td>
+                    </tr>
+                    <tr class="font-normal border-b border-border-four last:border-b-0">
+                      <td class="px-4 py-3 lg:px-5 xl:px-6">
+                        Cholesterol 185mg
+                      </td>
+                      <td class="w-24 px-4 py-3 border-s border-border-four lg:px-5 xl:px-6 ltr:text-right rtl:text-left lg:w-28 xl:w-36">
+                        62%
+                      </td>
+                    </tr>
+                    <tr class="font-normal border-b border-border-four last:border-b-0">
+                      <td class="px-4 py-3 lg:px-5 xl:px-6">Sodium 70mg</td>
+                      <td class="w-24 px-4 py-3 border-s border-border-four lg:px-5 xl:px-6 ltr:text-right rtl:text-left lg:w-28 xl:w-36">
+                        49%
+                      </td>
+                    </tr>
+                    <tr class="font-normal border-b border-border-four last:border-b-0">
+                      <td class="px-4 py-3 lg:px-5 xl:px-6">
+                        Total Carbohydrate 0g
+                      </td>
+                      <td class="w-24 px-4 py-3 border-s border-border-four lg:px-5 xl:px-6 ltr:text-right rtl:text-left lg:w-28 xl:w-36">
+                        18%
+                      </td>
+                    </tr>
+                    <tr class="font-normal border-b border-border-four last:border-b-0">
+                      <td class="px-4 py-3 lg:px-5 xl:px-6">Protein 6g</td>
+                      <td class="w-24 px-4 py-3 border-s border-border-four lg:px-5 xl:px-6 ltr:text-right rtl:text-left lg:w-28 xl:w-36">
+                        35%
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <span
+            id="headlessui-tabs-panel-:r8:"
+            role="tabpanel"
+            aria-labelledby="headlessui-tabs-tab-:r6:"
+            tabindex="-1"
+          ></span>
+        </div>
+        <div class="flex flex-wrap items-center justify-between mb-5 md:mb-6">
+          <div class="-mt-1.5 mb-0">
+            <h2 class="text-brand-dark text-lg lg:text-xl xl:text-[22px] xl:leading-8 font-bold font-manrope">
+              Related products
+            </h2>
+          </div>
+        </div>
+        <div className="flex gap-4">
+          <ProductList />
         </div>
       </div>
     </div>
