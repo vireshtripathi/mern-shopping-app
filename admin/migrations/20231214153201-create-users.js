@@ -7,14 +7,23 @@ module.exports = {
         type: Sequelize.UUID,
         allowNull: false,
         defaultValue: Sequelize.UUIDV4,
+      },
+      user_id: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
         primaryKey: true,
       },
       email: {
         type: Sequelize.STRING,
+        allowNull: false,
       },
       password: {
         type: Sequelize.STRING,
+        allowNull: false,
       },
+      gender: { type: Sequelize.STRING },
+      name: { type: Sequelize.STRING },
+      phone: { type: Sequelize.STRING },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
