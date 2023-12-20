@@ -4,17 +4,8 @@
 const { v4: uuidv4 } = require("uuid");
 module.exports = {
   async up(queryInterface, Sequelize) {
-    /**
-     * Add seed commands here.
-     *
-     * Example:
-     * await queryInterface.bulkInsert('People', [{
-     *   name: 'John Doe',
-     *   isBetaMember: false
-     * }], {});
-     */
     await queryInterface.bulkInsert(
-      "Users",
+      "users",
       [
         {
           id: uuidv4(),
@@ -32,19 +23,19 @@ module.exports = {
     );
 
     const users = await queryInterface.sequelize.query(
-      `SELECT user_id from Users;`
+      `SELECT user_id from users;`
     );
 
     const usersRows = users[0];
 
     return await queryInterface.bulkInsert(
-      "UsersDetail",
+      "users_detail",
       [
         {
           id: uuidv4(),
           address: "537/bha",
           zip_code: 226021,
-          user_id: usersRows[0].id,
+          user_id: usersRows[0].user_id,
           city: "Lucknow",
           country: "India",
           address_note: "",
@@ -57,13 +48,7 @@ module.exports = {
   },
 
   async down(queryInterface, Sequelize) {
-    /**
-     * Add commands to revert seed here.
-     *
-     * Example:
-     * await queryInterface.bulkDelete('People', null, {});
-     */
-    await queryInterface.bulkDelete("Users", null, {});
-    await queryInterface.bulkDelete("UsersDetail", null, {});
+    await queryInterface.bulkDelete("users", null, {});
+    await queryInterface.bulkDelete("users_detail", null, {});
   },
 };

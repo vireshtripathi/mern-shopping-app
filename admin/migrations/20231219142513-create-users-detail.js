@@ -9,7 +9,14 @@ module.exports = {
         primaryKey: true,
         defaultValue: Sequelize.UUIDV4,
       },
-      user_id: Sequelize.INTEGER,
+      user_id: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: "users",
+          key: "user_id",
+          as: "user_id",
+        },
+      },
       address: Sequelize.STRING,
       zip_code: Sequelize.STRING,
       city: Sequelize.STRING,
