@@ -2,7 +2,7 @@ import { Text } from "@/atoms";
 import { Banner, Categories, Footer } from "@/molecules";
 import { ProductList } from "@/organisms";
 
-const HomePageTemplate = () => (
+const HomePageTemplate = ({ productList }) => (
   <div>
     <Banner />
     <div className="text-center">
@@ -38,10 +38,9 @@ const HomePageTemplate = () => (
     </div>
     <div className="container my-10">
       <div className="flex flex-wrap gap-4">
-        <ProductList />
+        <ProductList {...{ productList }} />
       </div>
     </div>
-    <Footer />
   </div>
 );
 

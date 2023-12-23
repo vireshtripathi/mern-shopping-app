@@ -1,9 +1,15 @@
 // import ReactDOM from 'react-dom';
+import Image from "next/image";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import { ProductList } from "@/organisms";
 
-const ProductPageTemplate = () => (
+const ProductPageTemplate = ({
+  title,
+  price,
+  description,
+  productList = [],
+}) => (
   <div className="mx-auto max-w-[1920px] px-4 md:px-6 lg:px-8 2xl:px-10">
     <div className="pt-6 pb-2 md:pt-7">
       <div className="grid-cols-10 lg:grid gap-7 2xl:gap-8">
@@ -31,12 +37,19 @@ const ProductPageTemplate = () => (
           <div class="pb-3 lg:pb-5">
             <div class="md:mb-2.5 block -mt-1.5">
               <h2 class="text-lg font-medium transition-colors duration-300 text-brand-dark md:text-xl xl:text-2xl">
-                Fresh Express Iceberg Garden Salad Blend
+                {title}
               </h2>
             </div>
             <div class="flex items-center mt-5">
-              <div class="text-brand-dark font-bold text-base md:text-xl xl:text-[22px]">
-                $40.00
+              <div class="flex gap-1 text-brand-dark font-bold text-base md:text-xl xl:text-[22px]">
+                <Image
+                  width={13}
+                  height={13}
+                  src="/icons/rupee.svg"
+                  alt="categories"
+                  className="rounded-full"
+                />
+                {price}
               </div>
             </div>
           </div>
@@ -287,12 +300,7 @@ const ProductPageTemplate = () => (
               </div>
             </div>
           </div>
-          <p className="py-6 text-gray-500">
-            Go sporty this summer with this vintage navy and white striped
-            v-neck t-shirt from the Abercrombie &amp; Fitch. Perfect for pairing
-            with denim and white kicks for a stylish sporty vibe. Will fit a UK
-            8-10, model shown is a UK 8 and 5’5. !!
-          </p>
+          <p className="py-6 text-gray-500">{description}</p>
         </div>
       </div>
 
@@ -438,8 +446,8 @@ const ProductPageTemplate = () => (
             </h2>
           </div>
         </div>
-        <div className="flex gap-4">
-          <ProductList />
+        <div className="flex flex-wrap gap-4">
+          <ProductList {...{ productList }} />
         </div>
       </div>
     </div>

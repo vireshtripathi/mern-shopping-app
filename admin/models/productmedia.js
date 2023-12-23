@@ -10,6 +10,9 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      this.belongsTo(models.Products, {
+        foreignKey: "id",
+      });
     }
   }
   ProductMedia.init(
@@ -30,6 +33,7 @@ module.exports = (sequelize, DataTypes) => {
     {
       sequelize,
       modelName: "ProductMedia",
+      tableName: "product_media",
     }
   );
   return ProductMedia;

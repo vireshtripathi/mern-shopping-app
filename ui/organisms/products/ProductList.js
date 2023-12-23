@@ -1,12 +1,10 @@
 import { Fragment } from "react";
 import { ProductCard } from "@/molecules";
 
-const dummyProductList = [{}, {}, {}, {}, {}, {}, {}];
-
-const ProductList = () => (
+const ProductList = ({ productList }) => (
   <Fragment>
-    {dummyProductList.map((index) => (
-      <ProductCard key={index} />
+    {productList.map((product, index) => (
+      <ProductCard key={index} {...{ ...product }} />
     ))}
   </Fragment>
 );

@@ -9,7 +9,9 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      this.hasMany(models.ProductMedia, {
+        foreignKey: "img_id",
+      });
     }
   }
   Products.init(
