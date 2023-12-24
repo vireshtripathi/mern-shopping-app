@@ -3,7 +3,6 @@ import { getProduct, getProducts } from "@/services/product.service";
 import ProductPageTemplate from "@/templates/ProductPageTemplate";
 
 const Products = ({ product, productList = [] }) => {
-  console.log("Prod", product);
   return (
     <DefaultLayout {...{ pageTitle: "Home" }}>
       <ProductPageTemplate {...{ ...product, productList }} />

@@ -21,7 +21,10 @@
     "nvm": "^0.0.4",
     "react": "^18",
     "react-dom": "^18",
-    "react-responsive-carousel": "^3.2.23"
+    "react-responsive-carousel": "^3.2.23",
+    "react-toastify": "^9.1.3",
+    "universal-cookie": "^6.1.1",
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.6.3",

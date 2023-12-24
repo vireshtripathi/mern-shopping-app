@@ -1,4 +1,4 @@
-import { API_URL } from "./connections.service";
+import { API_URL } from "@/services/connections.service";
 
 const GetParamsValue = (value) => {
   if (value) {
@@ -30,3 +30,7 @@ export const GET_PRODUCTS = (skip, limit) =>
     skip,
     limit,
   });
+
+// Add TO Cart
+export const ADD_TO_CART = `${API_URL}/cart/add`;
+export const VIEW_CART_ITEM = `${API_URL}/cart/view`;

@@ -14,3 +14,17 @@ export const getWithoutAuth = (url) =>
         reject(ex);
       });
   });
+
+export const postWithoutAuth = (url, entity) =>
+  new Promise((resolve, reject) => {
+    axios
+      .post(url, entity)
+      .then((response) => {
+        if (response?.data) {
+          resolve(response.data);
+        }
+      })
+      .catch((ex) => {
+        reject(ex);
+      });
+  });
