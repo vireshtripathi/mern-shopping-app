@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { Cart } = require("../models");
+const { Cart, Products } = require("../models");
 
 router.post("/cart/add", async (req, res) => {
   const { user_id, prod_id, qty } = req.body;
@@ -15,7 +15,13 @@ router.post("/cart/add", async (req, res) => {
 
 router.get("/cart/view", async (req, res) => {
   try {
-    const cartList = await Cart.findAll();
+    const cartList = await Cart.findAll({
+      include: [
+        {
+          model: Products,
+        },
+      ],
+    });
     res.status(201).json(cartList);
   } catch (error) {
     console.log(error);
