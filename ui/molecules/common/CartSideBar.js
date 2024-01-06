@@ -49,40 +49,41 @@ const CartSideBar = ({ showCart, setShowCart }) => {
             </div>
           </div>
           <div className="w-full px-5 md:px-7 h-[calc(100vh_-_300px)] overflow-auto">
-            {cart.map((item, index) => (
+            {cart.map(({ Product, id }, index) => (
               <div
                 key={index}
-                className="group w-full h-auto flex justify-start items-center text-brand-light py-4 md:py-7 border-b border-border-one border-opacity-70 relative last:border-b-0"
-                title="Organic Girl Lettuce"
+                className="group w-full h-auto flex gap-2 justify-start items-center text-brand-light py-4 md:py-2 border-b border-border-one border-opacity-70 relative last:border-b-0"
+                title={Product.ProductMedia?.name}
+                id={id}
               >
-                <div className="relative flex rounded overflow-hidden shrink-0 cursor-pointer w-[90px] md:w-[100px] h-[90px] md:h-[100px]">
-                  <img
-                    alt="Organic Girl Lettuce"
-                    loading="eager"
-                    width="100"
-                    height="100"
-                    decoding="async"
-                    data-nimg="1"
+                <div className="relative flex rounded overflow-hidden shrink-0 cursor-pointer w-[90px] md:w-[50px] h-[90px] md:h-[50px]">
+                  <Image
+                    alt={Product.ProductMedia.name}
+                    src={`/product/${
+                      Product.ProductMedia[0]?.source
+                        ? Product.ProductMedia[0]?.source
+                        : "placeholder.svg"
+                    }`}
+                    width="50"
+                    height="50"
                     className="object-cover bg-fill-thumbnail"
                   />
+
                   <div
                     className="absolute top-0 flex items-center justify-center w-full h-full transition duration-200 ease-in-out bg-black ltr:left-0 rtl:right-0 bg-opacity-30 md:bg-opacity-0 md:group-hover:bg-opacity-30"
                     role="button"
                   >
-                    <svg
-                      stroke="currentColor"
-                      fill="currentColor"
-                      stroke-width="0"
-                      viewBox="0 0 512 512"
-                      className="relative text-2xl text-white transition duration-300 ease-in-out transform md:scale-0 md:opacity-0 md:group-hover:scale-100 md:group-hover:opacity-100"
-                      height="1em"
-                      width="1em"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path d="M256 48C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48zm52.7 283.3L256 278.6l-52.7 52.7c-6.2 6.2-16.4 6.2-22.6 0-3.1-3.1-4.7-7.2-4.7-11.3 0-4.1 1.6-8.2 4.7-11.3l52.7-52.7-52.7-52.7c-3.1-3.1-4.7-7.2-4.7-11.3 0-4.1 1.6-8.2 4.7-11.3 6.2-6.2 16.4-6.2 22.6 0l52.7 52.7 52.7-52.7c6.2-6.2 16.4-6.2 22.6 0 6.2 6.2 6.2 16.4 0 22.6L278.6 256l52.7 52.7c6.2 6.2 6.2 16.4 0 22.6-6.2 6.3-16.4 6.3-22.6 0z"></path>
-                    </svg>
+                    <div className="relative text-2xl text-white transition duration-300 ease-in-out transform md:scale-0 md:opacity-0 md:group-hover:scale-100 md:group-hover:opacity-100">
+                      <Image
+                        src="/icons/close-white.svg"
+                        width="15"
+                        height="15"
+                        alt="close icon"
+                      />
+                    </div>
                   </div>
                 </div>
+                <Text {...{ content: Product.title }} />
               </div>
             ))}
           </div>

@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { Cart, Products } = require("../models");
+const { Cart, Products, ProductMedia } = require("../models");
 
 router.post("/cart/add", async (req, res) => {
   const { user_id, prod_id, qty } = req.body;
@@ -19,6 +19,7 @@ router.get("/cart/view", async (req, res) => {
       include: [
         {
           model: Products,
+          include: ProductMedia,
         },
       ],
     });
@@ -26,6 +27,23 @@ router.get("/cart/view", async (req, res) => {
   } catch (error) {
     console.log(error);
     res.status(500).json({ error: "Internal Server Error" });
+  }
+});
+
+router.delete("/cart/:itemId", async (req, res) => {
+  try {
+    const itemId = req.params.itemId;
+
+    // Use Sequelize to find the cart item by ID and then delete it
+    const cartItem = await Cart.findByPk(itemId);
+    if (!itemId) {
+      return res.status(404).json({ error: "Cart item not found" });
+    }
+    await itemId.destroy();
+    return res.status(200).json({ message: "Cart item deleted successfully" });
+  } catch (error) {
+    console.error("Error deleting cart item:", error.message);
+    return res.status(500).json({ error: "Internal server error" });
   }
 });
 
