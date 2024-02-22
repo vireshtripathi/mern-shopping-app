@@ -1,11 +1,9 @@
 import { Text } from "@/atoms";
-import { AlertMessage, Banner, Categories, Footer, Menu } from "@/molecules";
+import { Banner, Categories, Footer } from "@/molecules";
 import { ProductList } from "@/organisms";
 
-const HomePageTemplate = () => (
+const HomePageTemplate = ({ productList }) => (
   <div>
-    <AlertMessage />
-    <Menu />
     <Banner />
     <div className="text-center">
       <Text
@@ -39,9 +37,10 @@ const HomePageTemplate = () => (
       />
     </div>
     <div className="container my-10">
-      <ProductList />
+      <div className="flex flex-wrap gap-4">
+        <ProductList {...{ productList }} />
+      </div>
     </div>
-    <Footer />
   </div>
 );
 
